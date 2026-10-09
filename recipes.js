@@ -2,6 +2,8 @@
 // Ingredient: [qty, unit, name, aisle, optional?]. qty is a number, a [low, high] range, or null (no amount).
 // Quantities are for the recipe's `servings`. Step phase p: 0 = start long tasks (boil, oven),
 // 1 = prep, 2 = cook, 3 = cool, portion & pack. m = minutes. `storage` is shown as a separate section.
+// freezesWell = notes explicitly say it suits freezing (used when suggesting a plan).
+// fridgeDays = days the cooked food keeps in the fridge; freezable = true if the notes say it can be frozen.
 const STARTER_RECIPES = [
   {
     id: "honey-bbq-chicken-rice",
@@ -30,6 +32,7 @@ const STARTER_RECIPES = [
       { p: 3, t: "Divide the rice, BBQ chicken and vegetables evenly between four meal-prep containers.", m: 8 },
       { p: 3, t: "Add any remaining sauce over the chicken.", m: 1 },
     ],
+    fridgeDays: 2, freezable: true, freezesWell: true, // notes say it suits batch cooking and freezing
     storage: [
       "Suitable for batch cooking and freezing.",
       "Additional BBQ sauce can be added after reheating.",
@@ -70,6 +73,7 @@ const STARTER_RECIPES = [
       { p: 3, t: "Divide the macaroni and cheese sauce between four containers.", m: 5 },
       { p: 3, t: "Top with the BBQ chicken, or stir the chicken through the pasta before portioning.", m: 3 },
     ],
+    fridgeDays: 2, freezable: true, // from the 48-hour fridge note below; freezing is mentioned in the notes
     storage: [
       "The sauce will thicken when chilled.",
       "Add a small splash of milk or water when reheating and stir halfway through.",
@@ -112,6 +116,7 @@ const STARTER_RECIPES = [
       { p: 2, t: "If using spinach, stir it in at the end until wilted.", m: 2 },
       { p: 3, t: "Divide evenly between four meal-prep containers.", m: 5 },
     ],
+    fridgeDays: 2, freezable: true, // from the 48-hour fridge note below; freezing is mentioned in the notes
     storage: [
       "Add a small splash of milk or water when reheating if the sauce has thickened.",
       "Optional variations can include extra cheese, a little tomato purée, mushrooms, spinach, peas or broccoli.",
